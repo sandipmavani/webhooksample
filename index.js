@@ -86,12 +86,19 @@ restService.post('/hook', function (req, res) {
                             var price = JSON.parse(response.getBody());
                             console.log(price);
                             speech += 'and \nPrice of Diamond Is :$ ' + price.data + ' Approx';
+                            speech += ' \nThank you for using our application ';
+                            speech += ' \nSay Hi again to calculate price of your diamond.';
                             console.log('result: ', speech);
-
+                        
                             return res.json({
                                 speech: speech,
                                 displayText: speech,
-                                source: 'apiai-webhook-sample'
+                                source: 'apiai-webhook-sample',
+                                data: {
+                                    google: {
+                                        expect_user_response: false
+                                    }
+                                }
                             });
                             }
                         );
