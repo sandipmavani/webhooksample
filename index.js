@@ -87,7 +87,8 @@ restService.post('/hook', function (req, res) {
                             console.log(price);
                             speech += 'and \nPrice of Diamond Is :$ ' + price.data + ' Approx';
                             speech += ' \nThank you for using our application ';
-                            speech += ' \nSay Hi again to calculate price of your diamond.';
+                            speech += ' \nSay Talk To diamond price calulator again to calculate price of your diamond.';
+                            speech += ' \nFor More Detail visit our site buy4diamond.com';
                             console.log('result: ', speech);
                         
                             return res.json({
